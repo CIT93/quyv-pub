@@ -15,9 +15,7 @@ const newHomeItems =8;
 const homeWaste = 40;
 // 7. amount of waste that you recycle 
 const homeRecycle = 18;
-// 8. annual transportation score.
 const transportation = 28;
 // 9. Add all points
-const totalPoints = document.querySelector("h2"); // variable to hold total points to output to html 
-totalPoints.textContent = myHouseMembers + myHomeSize + myFoodathome + runningWater + newHomeItems + homeWaste + homeRecycle + transportation; // all variables added up and outputed to html
+const total = myHouseMembers + myHomeSize + myFoodathome + runningWater + newHomeItems + homeWaste + homeRecycle + transportation;
 
