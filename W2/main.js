@@ -18,7 +18,6 @@ const homeRecycle = 18;
 // 8. annual transportation score.
 const transportation = 28;
 // 9. Add all points
-const CFPTotal =myHouseMembers + MyHomeSize + MyFoodathome + RunningWater + NewHomeItems + HomeWaste + HomeRecycle + transportation 
-
-console. log (myHeading.textContent)
+const totalPoints = document.querySelector("h2"); // variable to hold total points to output to html 
+totalPoints.textContent = myHouseMembers + myHomeSize + myFoodathome + runningWater + newHomeItems + homeWaste + homeRecycle + transportation; // all variables added up and outputed to html
 
