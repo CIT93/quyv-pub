@@ -27,3 +27,4 @@ const numberInhousehold = 3;
 determineHouseHoldPoints(3);
 determineHouseHoldPoints(4);
 
+Total (cardonFootprintPointsarbonFootprint10);
