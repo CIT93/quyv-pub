@@ -6,6 +6,28 @@
     <title>week 3 - Cardon Footprint Household</title>
 </head>
 <body>
-    
+   <h1 id="result"></h1> 
+   <script>
+    let numberInhousehold = 3;
+        let carbonFootprintPoints = 0;
+
+        if (numberInhousehold === 1) {
+            carbonFootprintPoints += 14;
+        } else if (numberInhousehold === 2) {
+            carbonFootprintPoints += 12;
+        } else if (numberInhousehold === 3) {
+            carbonFootprintPoints += 10;
+        } else if (numberInhousehold === 4) {
+            carbonFootprintPoints += 8;
+        } else if (numberInhousehold === 5) {
+            carbonFootprintPoints += 6;
+        } else if (numberInhousehold === 6) {
+            carbonFootprintPoints += 4;
+        } else if (numberInhousehold > 6) {
+            carbonFootprintPoints += 2;
+        }
+
+        document.getElementById("result").textContent = "Total Carbon Footprint Points: " + carbonFootprintPoints;
+   </script>
 </body>
 </html>

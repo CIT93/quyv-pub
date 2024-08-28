@@ -27,4 +27,25 @@ const numberInhousehold = 3;
 determineHouseHoldPoints(3);
 determineHouseHoldPoints(4);
 
-Total (cardonFootprintPointsarbonFootprint10);
+let (numberInhousehold = 3);
+let carbonFootprintPoints = 0;
+
+if (numberInhousehold === 1) {
+    carbonFootprintPoints += 14;
+} else if (numberInhousehold === 2) {
+    carbonFootprintPoints += 12;
+} else if (numberInhousehold === 3) {
+    carbonFootprintPoints += 10;
+} else if (numberInhousehold === 4) {
+    carbonFootprintPoints += 8;
+} else if (numberInhousehold === 5) {
+    carbonFootprintPoints += 6;
+} else if (numberInhousehold === 6) {
+    carbonFootprintPoints += 4;
+} else if (numberInhousehold > 6) {
+    carbonFootprintPoints += 2;
+}
+
+console.log("Total Carbon Footprint Points: " + carbonFootprintPoints);
+
+
