@@ -1,23 +1,23 @@
-// const cfpData = [];
+const cfpData = []; // Array to hold household data objects
 
+// Function to determine points based on house size
 function determineHouseSizePts(size) {
-  console.log("inside block scope");
   let houseSizePoints = 0;
   if (size === "large") {
     houseSizePoints = 10;
-  } else if (size === "meduim") {
+  } else if (size === "medium") {
     houseSizePoints = 7;
   } else if (size === "small") {
     houseSizePoints = 4;
   } else if (size === "apt") {
     houseSizePoints = 2;
   }
-  console.log(`Base on the size ${size} the points would be ${houseSizePTS}.`);
+  console.log(`Based on the size ${size}, the points are ${houseSizePoints}.`);
   return houseSizePoints;
 }
 
-function determineHouseSizePts(numberInhousehold) {
-  console.log("inside the function");
+// Function to determine points based on number of household members
+function determineHouseHoldPts(numberInhousehold) {
   let houseHoldPoints = 0;
   if (numberInhousehold === 1) {
     houseHoldPoints = 14;
@@ -34,67 +34,58 @@ function determineHouseSizePts(numberInhousehold) {
   } else if (numberInhousehold > 6) {
     houseHoldPoints = 2;
   }
- return houseHoldPoints;
+  console.log(`Based on the household size ${numberInhousehold}, the points are ${houseHoldPoints}.`);
+  return houseHoldPoints;
 }
 
+// Function to add data to cfpData array and calculate total points
+function start(householdMembers, houseSize) {
+  const houseHoldPTS = determineHouseHoldPts(householdMembers); // Get household points
+  const houseSizePTS = determineHouseSizePts(houseSize);        // Get house size points
+  const total = houseHoldPTS + houseSizePTS;                    // Calculate total points
 
-function displayOutObj(obj){
-  console.log(obj);
-  const output = document.getElementById("output");
-  const newH2 = document.createElement("h2");
-  newH2.textContent= `Cardon Footprint ${obj.cfpTotal}`
- // output.appendChild(newH2);
-}
-
-function start(houseHoldMembers, houseSize) {
-  const houseHoldPTS = determineHouseSizePts(houseHoldMembers);
-  const houseSizePTS = determineHouseSizePts(houseSize);
-  const total = houseHoldPTS + houseSizePTS;
+  // Add an object to cfpData array
   cfpData.push({
-    houseM: houseHoldMembers,
+    houseM: householdMembers,
     houseS: houseSize,
     houseMPTS: houseHoldPTS,
     houseSPTS: houseSizePTS,
-    cfpTotal: total
+    cfpTotal: total,
   });
-
 }
 
-const householdData = {
-  houseHoldMembers: 4,    // Value for number of household members
-  houseSize: "medium",    // Value for size of the house (small, medium, large)
-  houseHoldPTS: 10,       //  Value for household points
-  houseSizePTS: 7         //  Value for house size points
-};
-console.log(householdData.houseHoldMembers); // Outputs: 4
-householdData.houseHoldPTS = 12; // Updates the houseHoldPTS to 12
+// Function to display the output for all objects in cfpData array
+function displayOutput() {
+  for (let obj of cfpData) {
+    console.log(obj); // Log the object for debugging
+    const output = document.getElementById("output");
+    
+    // Create and append the H2 element for total score
+    const newH2 = document.createElement("h2");
+    newH2.textContent = `Carbon Footprint Total: ${obj.cfpTotal}`;
+    
+    // Create and append the H3 element for additional information
+    const newH3 = document.createElement("h3");
+    newH3.textContent = `Based on household size and home size`;
+    
+    // Create and append the P element for details
+    const newP = document.createElement("p");
+    newP.textContent = `This number is based on the number of people in the house (${obj.houseM} members, score: ${obj.houseMPTS}) `;
+    newP.textContent += `and a ${obj.houseS} size of home (score: ${obj.houseSPTS}).`;
 
-
-
- function displayOutput(){
-   for (obj of cfpData){
-    console.log(obj)
-   const output = document.getElementById("output");
-   const newH2 = document.createElement("h2");
-   newH2.textContent = `Cardon Footprint ${obj.cfpTotal}`;
-  //  const newH3 = document.createElement("h3");
-  //  newH3.textContent = `Based on number in size of home`
-  //  const newP = document.createElement("p");
-  //  newP.textContent = `This number is based on the number of people `
-  //  newP.textContent += ` and a ${arr[1]} size of home (score:${arr[2]})`
+    // Append the elements to the output div
     output.appendChild(newH2);
-  //  output.appendChild(newH3);
-  //  output.appendChild(newP);
-     }
+    output.appendChild(newH3);
+    output.appendChild(newP);
+  }
 }
 
+// Start adding data to the array
 start(5, "apt");
 start(4, "large");
-start(3, "meduim");
+start(3, "medium");
 start(2, "small");
 start(1, "apt");
 
-displayOutput()
-
-
-
+// Display the output on the webpage
+displayOutput();
