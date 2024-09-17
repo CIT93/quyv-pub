@@ -43,13 +43,15 @@ function determineHouseHoldPts(numberInhousehold) {
 }
 
 // Function to add data to cfpData array and calculate total points
-function start(householdMembers, houseSize) {
+function start(firstname, lastname, householdMembers, houseSize) {
   const houseHoldPTS = determineHouseHoldPts(householdMembers); // Get household points
   const houseSizePTS = determineHouseSizePts(houseSize); // Get house size points
   const total = houseHoldPTS + houseSizePTS; // Calculate total points
 
-  // Add an object to cfpData array
+  // Add an object to cfpData array, including firstname and lastname
   cfpData.push({
+    firstname: firstname,
+    lastname: lastname,
     houseM: householdMembers,
     houseS: houseSize,
     houseMPTS: houseHoldPTS,
@@ -71,9 +73,10 @@ function displayOutput() {
     const newH3 = document.createElement("h3");
     newH3.textContent = `Based on household size and home size`;
 
-    // Create and append the P element for details
+    // Create and append the P element for names and details
     const newP = document.createElement("p");
-    newP.textContent = `This number is based on the number of people in the house (${obj.houseM} members, score: ${obj.houseMPTS}) `;
+    newP.textContent = `This footprint is calculated for ${obj.firstname} ${obj.lastname}, `;
+    newP.textContent += `who lives in a household with ${obj.houseM} members (score: ${obj.houseMPTS}), `;
     newP.textContent += `and a ${obj.houseS} size of home (score: ${obj.houseSPTS}).`;
 
     // Append the elements to the output div
@@ -83,22 +86,31 @@ function displayOutput() {
   }
 }
 
-
-
-// Display the output on the webpage
-displayOutput();
-
-FORM.addEventListener(`submit`, function (e) {
+// Event listener for form submission
+FORM.addEventListener('submit', function (e) {
   e.preventDefault();
+
+  // Get the form values
   const firstname = FORM.firstname.value;
   const lastname = FORM.lastname.value;
-  const householdMembers = parseInt(FORM.houseM.value);
-  const houseSize = FORM.houseS.value;
+  const householdMembers = parseInt(FORM.housem.value);
+  const houseSize = FORM.house.value;
+
+  // Validate that the values exist
+  if (!firstname || !lastname || !householdMembers || !houseSize) {
+    console.error("All fields are required.");
+    return;
+  }
+
+  // Call the start function with the correct parameters
   start(householdMembers, houseSize);
+
+  // Clear the output area before displaying the updated results
   OUTPUT.innerHTML = "";
-  // Display the output on the webpage
+
+  // Display the output
   displayOutput();
+
+  // Reset the form
   FORM.reset();
 });
-
-

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Calculating Your Cardon Footprint Points </title>
+    <title>Calculating Your Carbon Footprint Points</title>
     <style>
         html {
             font-size: 22px;
@@ -26,24 +26,23 @@
   <body>
     <form id="form">
       <fieldset>
-        <legend>Input Cardon Footprint</legend>
+        <legend>Input Carbon Footprint</legend>
         <div>
-            <label for="">First Name:</label>
-            <input type="text" name="firstname" required/>
+            <label for="firstname">First Name:</label>
+            <input type="text" name="firstname" maxlength="20" required />
         </div>
         <div>
-            <label for="">Last Name:</label>
-            <input type="text" name="lastname" required/>
+            <label for="lastname">Last Name:</label>
+            <input type="text" name="lastname" maxlength="20" required />
         </div>
         <div>
-            <label for="">Count the members of your household?</label>
-            <input type="number" name="housem"  min="1" max="6" required/>
+            <label for="housem">Count the members of your household?</label>
+            <input type="number" name="housem" min="1" max="6" required />
         </div>   
         <div>
-            <label for="">What is the size of your house?</label>
-            <!--input type="text" name="houses"required/>-->
-            <select name="house" required >
-                <option value="">---Please enter size of home--- </option>
+            <label for="house">What is the size of your house?</label>
+            <select name="house" required>
+                <option value="">---Please enter size of home---</option>
                 <option value="apt">Apartment</option>
                 <option value="large">Large</option>
                 <option value="medium">Medium</option>
