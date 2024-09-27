@@ -59,8 +59,8 @@ function renderTbl(data) {
 
 // Example array of objects to test the renderTbl function
 const cfpData = [
-  { firstname: "John", lastname: "Doe", houseM: 4, houseS: "Large", houseMPTS: 8, houseSPTS: 10, cfpTotal: 18 },
-  { firstname: "Jane", lastname: "Doe", houseM: 3, houseS: "Medium", houseMPTS: 10, houseSPTS: 7, cfpTotal: 17 }
+  { firstname: "Quy", lastname: "Vu", houseM: 4, houseS: "Large", houseMPTS: 8, houseSPTS: 10, cfpTotal: 18 },
+  { firstname: "Quy", lastname: "Vu", houseM: 3, houseS: "Medium", houseMPTS: 10, houseSPTS: 7, cfpTotal: 17 }
 ];
 
 // Call renderTbl with the sample data to test the output
