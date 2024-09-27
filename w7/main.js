@@ -1,3 +1,5 @@
+import { renderTbl } from "./render.js";
+
 const FORM = document.getElementById("form");
 const OUTPUT = document.getElementById("output");
 const cfpData = []; // Array to hold household data objects
@@ -60,32 +62,6 @@ function start(firstname, lastname, householdMembers, houseSize) {
   });
 }
 
-// Function to display the output for all objects in cfpData array
-function displayOutput() {
-  for (let obj of cfpData) {
-    console.log(obj); // Log the object for debugging
-
-    // Create and append the H2 element for total score
-    const newH2 = document.createElement("h2");
-    newH2.textContent = `Carbon Footprint Total: ${obj.cfpTotal}`;
-
-    // Create and append the H3 element for additional information
-    const newH3 = document.createElement("h3");
-    newH3.textContent = `Based on household size and home size`;
-
-    // Create and append the P element for names and details
-    const newP = document.createElement("p");
-    newP.textContent = `This footprint is calculated for ${obj.firstname} ${obj.lastname}, `;
-    newP.textContent += `who lives in a household with ${obj.houseM} members (score: ${obj.houseMPTS}), `;
-    newP.textContent += `and a ${obj.houseS} size of home (score: ${obj.houseSPTS}).`;
-
-    // Append the elements to the output div
-    OUTPUT.appendChild(newH2);
-    OUTPUT.appendChild(newH3);
-    OUTPUT.appendChild(newP);
-  }
-}
-
 // Event listener for form submission
 FORM.addEventListener('submit', function (e) {
   e.preventDefault();
@@ -109,9 +85,22 @@ FORM.addEventListener('submit', function (e) {
   OUTPUT.innerHTML = "";
 
   // Display the output
-  displayOutput();
-
-  // Reset the form
+ // displayOutput();
+  renderTbl(cfpData);
+// Reset the form
   FORM.reset();
 });
 
+
+fetch('/w7/render.js')
+  .then(response => response.text())
+  .then(data => {
+    // Process the data from render.js
+  })
+  .catch(error => {
+    console.error('Error loading render.js:', error);
+  });
+
+  const script = document.createElement('script');
+script.src = 'render.js';
+document.head.appendChild(script);
