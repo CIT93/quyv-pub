@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculating Your Carbon Footprint Points</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="render.js"></script>  </head>
+  <body>
+    <form id="form">
+      <fieldset>
+        <legend>Input Carbon Footprint</legend>
+        <div>
+          <label for="firstname">First Name:</label>
+          <input type="text" id="firstname" name="firstname" maxlength="20" required />
+        </div>
+        <div>
+          <label for="lastname">Last Name:</label>
+          <input type="text" id="lastname" name="lastname" maxlength="20" required />
+        </div>
+        <div>
+          <label for="housem">Count the members of your household?</label>
+          <input type="number" id="housem" name="housem" min="1" max="6" required />
+        </div>
+        <div>
+          <label for="house">What is the size of your house?</label>
+          <select id="house" name="house" required>
+            <option value="">---Please enter size of home---</option>
+            <option value="apt">Apartment</option>
+            <option value="large">Large</option>
+            <option value="medium">Medium</option>
+            <option value="small">Small</option>
+          </select>
+        </div>
+        <button type="submit">SUBMIT</button>
+      </fieldset>
+    </form>
+    <div id="output"></div>
+    <div id="tab-data"></div>
+  </body>
+</html>
