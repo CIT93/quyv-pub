@@ -46,8 +46,17 @@ function createActionButtons(data, index) {
   return tdAction; // Return the table cell containing action buttons
 }
 
-// Function to render the table with data
 function renderTbl(data) {
+  TBL.innerHTML = ""; // Clear previous content
+
+  // Check if the data array is empty
+  if (data.length === 0) {
+    const message = document.createElement("p");
+    message.textContent = "No data available.";
+    TBL.appendChild(message); // Show a message when there's no data
+    return; // Stop here if there's no data to display
+  }
+
   const table = renderTblHeading(); // Use the table header function
   const tbody = document.createElement("tbody");
 
@@ -72,9 +81,9 @@ function renderTbl(data) {
   });
 
   table.appendChild(tbody);
-  TBL.innerHTML = ""; // Clear previous content
   TBL.appendChild(table); // Append the new table to the TBL container
 }
+
 
 // Function to handle editing a row
 function editRow(data, index) {
