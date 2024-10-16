@@ -14,10 +14,12 @@
         <div>
           <label for="firstname">First Name:</label>
           <input type="text" id="firstname" name="firstname" maxlength="20" />
+          <span id="firstname-error" style="color: red;"></span> <!-- Validation message for first name -->
         </div>
         <div>
           <label for="lastname">Last Name:</label>
           <input type="text" id="lastname" name="lastname" maxlength="20" />
+          <span id="lastname-error" style="color: red;"></span> <!-- Validation message for last name -->
         </div>
         <div>
           <label for="housem">Count the members of your household?</label>
@@ -38,5 +40,39 @@
     </form>
     <div id="output"></div>
     <div id="tab-data"></div>
+
+    <script>
+      // Handle form submission with validation
+      const form = document.getElementById('form');
+
+      form.addEventListener('submit', function(event) {
+        let isValid = true;
+
+        // Get input values
+        const firstname = document.getElementById('firstname').value;
+        const lastname = document.getElementById('lastname').value;
+
+        // Clear previous validation messages
+        document.getElementById('firstname-error').textContent = '';
+        document.getElementById('lastname-error').textContent = '';
+
+        // Validate first name
+        if (!firstname) {
+          document.getElementById('firstname-error').textContent = 'First name is required';
+          isValid = false;
+        }
+
+        // Validate last name
+        if (!lastname) {
+          document.getElementById('lastname-error').textContent = 'Last name is required';
+          isValid = false;
+        }
+
+        // If validation fails, prevent form submission
+        if (!isValid) {
+          event.preventDefault();
+        }
+      });
+    </script>
   </body>
 </html>

@@ -1,0 +1,1 @@
+I would say it did teach me a few newer thing about function and maybe i can see it in a different way now 
