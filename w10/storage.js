@@ -8,7 +8,12 @@ const saveLS = function(cfpData) {
 const getLS = function() {
   const retrievedArr = localStorage.getItem("cfp");
   if (retrievedArr !== null) {
-      return JSON.parse(retrievedArr); // Parse stored JSON data back to JavaScript object
+      try {
+          return JSON.parse(retrievedArr); // Parse stored JSON data back to JavaScript object
+      } catch (e) {
+          console.error("Error parsing local storage data:", e);
+          return []; // Return an empty array if parsing fails
+      }
   } else {
       return []; // Return an empty array if nothing is found in local storage
   }
