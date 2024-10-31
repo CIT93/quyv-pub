@@ -1,0 +1,72 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000; /* Black background */
+    color: #C0C0C0; /* Silver text */
+    padding: 20px;
+}
+
+h2 {
+    color: #C8102E; /* Red heading */
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+form {
+    background: #1A1A1A; /* Dark gray form background */
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #C0C0C0; /* Silver border */
+    width: 100%;
+    max-width: 300px;
+    color: #C0C0C0; /* Silver form text */
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #C0C0C0; /* Silver label text */
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    font-size: 1em;
+    background-color: #333; /* Dark input background */
+    color: #C0C0C0; /* Silver text */
+}
+
+button {
+    background-color: #C8102E; /* Red button */
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    background-color: #A50D1D; /* Darker red on hover */
+}
+
+#output {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #1A1A1A; /* Dark background for output */
+    border: 2px solid #C0C0C0; /* Silver border */
+    border-radius: 8px;
+    color: #C0C0C0;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+}
