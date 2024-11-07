@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Workout Challenge</h2>
+    <form id="workoutForm">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" required />
+
+        <label for="exercise">Exercise Type:</label>
+        <select id="exercise" required>
+            <option value="">Select Exercise</option>
+            <option value="Push-up">Push-up</option>
+            <option value="Sit-up">Sit-up</option>
+            <option value="Jumping Jack">Jumping Jack</option>
+        </select>
+
+        <label for="reps">Number of Reps:</label>
+        <input type="number" id="reps" min="1" max="20" required />
+
+        <label for="time">Duration (minutes):</label>
+        <input type="number" id="time" min="1" max="5" required />
+
+        <button type="submit">Start Workout</button>
+    </form>
+
+    <div id="output"></div>
+</body>
+</html>
