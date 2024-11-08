@@ -3,32 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workout Challenge</title>
+    <title>Workout App</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>Workout Challenge</h2>
+    <!-- Form for workout input -->
     <form id="workoutForm">
-        <label for="name">Your Name:</label>
-        <input type="text" id="name" required />
+        <fieldset>
+            <legend>Workout Details</legend>
 
-        <label for="exercise">Exercise Type:</label>
-        <select id="exercise" required>
-            <option value="">Select Exercise</option>
-            <option value="Push-up">Push-up</option>
-            <option value="Sit-up">Sit-up</option>
-            <option value="Jumping Jack">Jumping Jack</option>
-        </select>
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
 
-        <label for="reps">Number of Reps:</label>
-        <input type="number" id="reps" min="1" max="20" required />
+            <div>
+                <label for="exercise">Type of Exercise:</label>
+                <select id="exercise" name="exercise" required>
+                    <option value="">--Select Exercise--</option>
+                    <option value="pull up">Pull Up</option>
+                    <option value="push up">Push Up</option>
+                    <option value="sit up">Sit Up</option>
+                </select>
+            </div>
 
-        <label for="time">Duration (minutes):</label>
-        <input type="number" id="time" min="1" max="5" required />
+            <div>
+                <label for="reps">Target Reps:</label>
+                <input type="number" id="reps" name="reps" min="1" max="50" required>
+            </div>
 
-        <button type="submit">Start Workout</button>
+            <div>
+                <label for="time">Time in Minutes:</label>
+                <input type="number" id="time" name="time" min="1" max="60" required>
+            </div>
+
+            <button type="submit">Start Workout</button>
+        </fieldset>
     </form>
 
+    <!-- Output section for workout messages -->
     <div id="output"></div>
+
+    <!-- Link to your JavaScript file -->
+    <script src="main.js"></script>
 </body>
 </html>

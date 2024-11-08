@@ -2,6 +2,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("workoutForm");
     const outputDiv = document.getElementById("output");
 
+    // Log the form to verify it's correctly selected
+    console.log(form); // This should log the form element or `null`
+
+    // Check if form is null to handle the error if it doesn't exist
+    if (!form) {
+        console.error("Form with ID 'workoutForm' not found.");
+        return; // Stop execution if the form is not found
+    }
+
     // Helper function to create a promise that resolves after a specified delay
     function delay(ms) {
         return new Promise((resolve) => setTimeout(resolve, ms));
