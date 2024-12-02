@@ -47,6 +47,21 @@
       form button:hover {
         background-color: #e0a800; /* Darker yellow */
       }
+      table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+        color: #fff;
+      }
+      th, td {
+        padding: 10px;
+        border: 1px solid #ffc107;
+        text-align: left;
+      }
+      th {
+        background-color: #ffc107;
+        color: #000;
+      }
     </style>
   </head>
   <body>
@@ -75,31 +90,28 @@
         <label for="dishwasher">Dishwasher Usage:</label>
         <select id="dishwasher" name="dishwasher" required>
           <option value="">--- Dishwasher usage ---</option>
-          <option value="none">No dishwasher</option>
-          <option value="1-3">1-3 times/week</option>
-          <option value="4-9">4-9 times/week</option>
-          <option value="9+">More than 9 times/week</option>
+          <option value="0">No dishwasher</option>
+          <option value="1">1-3 times/week</option>
+          <option value="2">4-9 times/week</option>
+          <option value="3">More than 9 times/week</option>
         </select>
 
         <label for="washingMachine">Washing Machine Usage:</label>
         <select id="washingMachine" name="washingMachine" required>
           <option value="">--- Washing machine usage ---</option>
-          <option value="none">No washing machine</option>
-          <option value="1-3">1-3 times/week</option>
-          <option value="4-9">4-9 times/week</option>
-          <option value="9+">More than 9 times/week</option>
+          <option value="0">No washing machine</option>
+          <option value="1">1-3 times/week</option>
+          <option value="2">4-9 times/week</option>
+          <option value="3">More than 9 times/week</option>
         </select>
 
-        <label for="foodChoice">Food Choice:</label>
-        <select id="foodChoice" name="foodChoice" required>
-          <option value="">--- Select food choice ---</option>
-          <option value="Domestic meat on a daily basis">Domestic meat on a daily basis</option>
-          <option value="Domestic meat a few times per week">Domestic meat a few times per week</option>
-          <option value="Vegetarian">Vegetarian</option>
-          <option value="Vegan or only wild meat">Vegan or only wild meat</option>
-          <option value="Mostly prepackaged convenience food">Mostly prepackaged convenience food</option>
-          <option value="A balance of fresh and convenience food">A balance of fresh and convenience food</option>
-          <option value="Only fresh, locally grown, or hunted food">Only fresh, locally grown, or hunted food</option>
+        <label for="householdPurchases">Annual Household Purchases:</label>
+        <select id="householdPurchases" name="householdPurchases" required>
+          <option value="">--- Select an option ---</option>
+          <option value="0-10">0-10 purchases</option>
+          <option value="11-50">11-50 purchases</option>
+          <option value="51-100">51-100 purchases</option>
+          <option value="101+">101+ purchases</option>
         </select>
 
         <button type="submit">Submit</button>
