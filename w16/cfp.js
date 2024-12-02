@@ -1,42 +1,29 @@
-// Function to determine points based on house size
-const determineHouseSizePts=function(size) {
-    
-    let houseSizePoints = 0;
-    if (size === "large") {
-      houseSizePoints = 10;
-    } else if (size === "medium") {
-      houseSizePoints = 7;
-    } else if (size === "small") {
-      houseSizePoints = 4;
-    } else if (size === "apt") {
-      houseSizePoints = 2;
-    }
-    console.log(`Based on the size ${size}, the points are ${houseSizePoints}.`);
-    return houseSizePoints;
+export const parseWaterConsumption = (value) => {
+  switch (value) {
+    case "none":
+      return 0;
+    case "1-3":
+      return 1;
+    case "4-9":
+      return 2;
+    case "9+":
+      return 3;
+    default:
+      return 0;
   }
-  
-  // Function to determine points based on number of household members
-  const determineHouseHoldPts=function(numberInhousehold) {
-    let houseHoldPoints = 0;
-    if (numberInhousehold === 1) {
-      houseHoldPoints = 14;
-    } else if (numberInhousehold === 2) {
-      houseHoldPoints = 12;
-    } else if (numberInhousehold === 3) {
-      houseHoldPoints = 10;
-    } else if (numberInhousehold === 4) {
-      houseHoldPoints = 8;
-    } else if (numberInhousehold === 5) {
-      houseHoldPoints = 6;
-    } else if (numberInhousehold === 6) {
-      houseHoldPoints = 4;
-    } else if (numberInhousehold > 6) {
-      houseHoldPoints = 2;
-    }
-    console.log(
-      `Based on the household size ${numberInhousehold}, the points are ${houseHoldPoints}.`
-    );
-    return houseHoldPoints;
-  }
+};
 
-  export {determineHouseHoldPts,determineHouseSizePts}
+export const determinePurchasePoints = (purchases) => {
+  switch (purchases) {
+    case "0-10":
+      return 1;
+    case "11-50":
+      return 3;
+    case "51-100":
+      return 5;
+    case "101+":
+      return 10;
+    default:
+      return 0;
+  }
+};
