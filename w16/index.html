@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carbon Footprint Assessment</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #000; /* Black background */
+        color: #fff; /* White text */
+        margin: 20px;
+      }
+      form {
+        margin-bottom: 20px;
+        padding: 15px;
+        border: 1px solid #ffc107; /* Yellow border */
+        border-radius: 5px;
+        background-color: #111; /* Dark background */
+      }
+      form label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #ffc107; /* Yellow text */
+      }
+      form input,
+      form select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #222;
+        color: #fff;
+      }
+      form button {
+        width: 100%;
+        padding: 10px;
+        background-color: #ffc107; /* Yellow button */
+        border: none;
+        border-radius: 5px;
+        color: #000;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      form button:hover {
+        background-color: #e0a800; /* Darker yellow */
+      }
+    </style>
+  </head>
+  <body>
+    <form id="carbon-footprint-form">
+      <fieldset>
+        <legend>Input Carbon Footprint</legend>
+
+        <label for="firstname">First Name:</label>
+        <input type="text" id="firstname" name="firstname" required />
+
+        <label for="lastname">Last Name:</label>
+        <input type="text" id="lastname" name="lastname" required />
+
+        <label for="housem">Household Members:</label>
+        <input type="number" id="housem" name="housem" min="1" max="10" required />
+
+        <label for="house">House Size:</label>
+        <select id="house" name="house" required>
+          <option value="">--- Select house size ---</option>
+          <option value="apt">Apartment</option>
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+        </select>
+
+        <label for="dishwasher">Dishwasher Usage:</label>
+        <select id="dishwasher" name="dishwasher" required>
+          <option value="">--- Dishwasher usage ---</option>
+          <option value="none">No dishwasher</option>
+          <option value="1-3">1-3 times/week</option>
+          <option value="4-9">4-9 times/week</option>
+          <option value="9+">More than 9 times/week</option>
+        </select>
+
+        <label for="washingMachine">Washing Machine Usage:</label>
+        <select id="washingMachine" name="washingMachine" required>
+          <option value="">--- Washing machine usage ---</option>
+          <option value="none">No washing machine</option>
+          <option value="1-3">1-3 times/week</option>
+          <option value="4-9">4-9 times/week</option>
+          <option value="9+">More than 9 times/week</option>
+        </select>
+
+        <label for="foodChoice">Food Choice:</label>
+        <select id="foodChoice" name="foodChoice" required>
+          <option value="">--- Select food choice ---</option>
+          <option value="Domestic meat on a daily basis">Domestic meat on a daily basis</option>
+          <option value="Domestic meat a few times per week">Domestic meat a few times per week</option>
+          <option value="Vegetarian">Vegetarian</option>
+          <option value="Vegan or only wild meat">Vegan or only wild meat</option>
+          <option value="Mostly prepackaged convenience food">Mostly prepackaged convenience food</option>
+          <option value="A balance of fresh and convenience food">A balance of fresh and convenience food</option>
+          <option value="Only fresh, locally grown, or hunted food">Only fresh, locally grown, or hunted food</option>
+        </select>
+
+        <button type="submit">Submit</button>
+      </fieldset>
+    </form>
+
+    <div id="results">
+      <!-- Rendered table data will be added here dynamically -->
+    </div>
+  </body>
+</html>
