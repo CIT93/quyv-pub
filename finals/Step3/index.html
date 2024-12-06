@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Feeding Schedule</title>
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <h1>Pet Feeding Form</h1>
+    <form id="petForm">
+        <label for="petName">Pet Name:</label>
+        <input type="text" id="petName" name="petName" required>
+        
+        <label for="feedingInterval">Feeding Interval (hours):</label>
+        <input type="number" id="feedingInterval" name="feedingInterval" min="1" required>
+        
+        <button type="submit">Submit</button>
+    </form>
+    
+    <div id="formDataOutput">
+        <!-- The form data will be displayed here dynamically -->
+    </div>
+</body>
+</html>
