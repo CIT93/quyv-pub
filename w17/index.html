@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carbon Footprint Assessment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+    form {
+      margin-bottom: 20px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      background-color: #fff;
+      border-radius: 5px;
+    }
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
+    }
+    select, button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #results {
+      margin-top: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <form id="carbon-footprint-form">
+    <fieldset>
+      <legend>Carbon Footprint Assessment</legend>
+
+      <label for="waste">Waste Production Level:</label>
+      <select id="waste" name="waste" required>
+        <option value="">Select waste level</option>
+        <option value="none">None</option>
+        <option value="minimal">Minimal</option>
+        <option value="average">Average</option>
+        <option value="high">High</option>
+      </select>
+
+      <fieldset>
+        <legend>Transportation Mode</legend>
+        <label for="personal">Personal Vehicle:</label>
+        <select id="personal" name="personal">
+          <option value="">Select usage</option>
+          <option value="high">High Usage (50 points)</option>
+          <option value="medium">Medium Usage (30 points)</option>
+          <option value="low">Low Usage (10 points)</option>
+          <option value="none">No Usage (0 points)</option>
+        </select>
+
+        <label for="public">Public Transport:</label>
+        <select id="public" name="public">
+          <option value="">Select usage</option>
+          <option value="high">High Usage (20 points)</option>
+          <option value="medium">Medium Usage (10 points)</option>
+          <option value="low">Low Usage (5 points)</option>
+          <option value="none">No Usage (0 points)</option>
+        </select>
+
+        <label for="flights">Annual Flights:</label>
+        <select id="flights" name="flights">
+          <option value="">Select flights</option>
+          <option value="frequent">Frequent (100 points)</option>
+          <option value="occasional">Occasional (50 points)</option>
+          <option value="rare">Rare (20 points)</option>
+          <option value="none">None (0 points)</option>
+        </select>
+      </fieldset>
+
+      <button type="submit">Submit</button>
+    </fieldset>
+  </form>
+
+  <div id="results">
+    <h2>Results</h2>
+    <table id="result-table">
+      <thead>
+        <tr>
+          <th>Waste Points</th>
+          <th>Transport Points</th>
+          <th>Total Points</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data will be dynamically inserted here -->
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
