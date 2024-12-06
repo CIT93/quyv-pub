@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Feeding Schedule</title>
+    <script defer src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Pet Feeding Form</h1>
+    <form id="petForm">
+        <label for="petName">Pet Name:</label>
+        <input type="text" id="petName" name="petName" required>
+        
+        <label for="feedingInterval">Feeding Interval (hours):</label>
+        <input type="number" id="feedingInterval" name="feedingInterval" min="1" required>
+        
+        <button type="submit">Submit</button>
+    </form>
+    
+    <div id="formDataOutput">
+        <!-- Calculated form data will be displayed here -->
+    </div>
+    
+    <!-- Placeholder for tabular data output -->
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>Pet Name</th>
+                <th>Feeding Interval</th>
+                <th>Next Feeding Time</th>
+                <th>Decision</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data rows will be added here -->
+        </tbody>
+    </table>
+</body>
+</html>
